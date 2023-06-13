@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+ADDED=$(git diff --diff-filter=A --name-only origin/master -- 'app/*.php')
+CHANGED=$(git diff --diff-filter=Mda --name-only origin/master -- 'app/*.php')
+
+PACKAGE_PATH="./vendor/bin/pint"
+
+CONFIG_FILE="./pint.json"
+
+if [ -f "$CONFIG_FILE" ]; then
+  CONFIG_FILE_ARG="--config=$CONFIG_FILE"
+else
+
+  CONFIG_FILE="./vendor/proxify/proxify-php-code-style/pint.json"
+
+  if [ -f "$CONFIG_FILE" ]; then
+    CONFIG_FILE_ARG="--config=$CONFIG_FILE"
+  fi
+fi
+
+echo "CONFIG_FILE_ARG: $CONFIG_FILE_ARG"
+
+if [ -z "$ADDED" ]
+then echo 'No PHP files added to this Pull Request, skip.';
+else
+  php ${PACKAGE_PATH} --test $CONFIG_FILE_ARG $ADDED
+fi
+if [ -z "$CHANGED" ]
+then echo 'No PHP files changed in this Pull Request, skip.';
+else
+  php ${PACKAGE_PATH} --test $CONFIG_FILE_ARG $CHANGED
+fi

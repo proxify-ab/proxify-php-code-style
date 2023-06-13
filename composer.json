@@ -33,6 +33,7 @@
         }
     },
     "bin": [
+        "bin/proxify-cs-checker",
         "vendor/bin/pint"
     ],
     "scripts": {

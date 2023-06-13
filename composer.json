@@ -1,0 +1,41 @@
+{
+    "name": "proxify/proxify-php-code-style",
+    "description": "A PHP code style package that helps enforce consistent code formatting and style conventions using Proxify standards.",
+    "keywords": [
+        "proxify",
+        "proxify-php-code-style"
+    ],
+    "homepage": "https://github.com/proxify/proxify-php-code-style",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Abdellah Chadidi",
+            "email": "chadidi97@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Proxify\\ProxifyPhpCodeStyle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Proxify\\ProxifyPhpCodeStyle\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

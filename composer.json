@@ -16,10 +16,10 @@
         }
     ],
     "require": {
-        "php": "^8.0"
+        "php": "^8.0",
+        "laravel/pint": "^1.10"
     },
     "require-dev": {
-        "laravel/pint": "^1.10",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
@@ -34,7 +34,7 @@
     },
     "bin": [
         "bin/proxify-cs-checker",
-        "vendor/bin/pint"
+        "bin/proxify-cs-fixer"
     ],
     "scripts": {
         "test": "vendor/bin/phpunit",

@@ -40,7 +40,8 @@ Add code style config path to `.vscode/settings.json`
 ### PHPStorm setup
 
 Create a new File watcher.
-<img width="991" alt="image" src="https://github.com/proxify-ab/proxify-php-code-style/assets/9916806/e3384d45-e289-4912-9092-1f11103f24ff">
+<img width="985" alt="image" src="https://github.com/proxify-ab/proxify-php-code-style/assets/9916806/d28cb170-6305-4ecb-9eda-9ccd49f71fb5">
+
 
 ```
 // Pint file watcher settings

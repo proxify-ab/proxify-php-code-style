@@ -54,6 +54,38 @@ $ProjectFileDir$
 Disable `PHP` in the reformat code setting.
 <img width="987" alt="image" src="https://github.com/proxify-ab/proxify-php-code-style/assets/9916806/b02b59be-9aaf-4c43-bf0b-d5f0d3fac9ca">
 
+### Github actions job
+```yml
+  laravel-code-style:
+      name: Code Style
+      if: github.ref_name != 'master'
+      runs-on: "ubuntu-20.04"
+      steps:
+        - uses: actions/checkout@v3
+          with:
+            fetch-depth: 0
+
+        - name: Cache Composer cache directory
+          uses: actions/cache@v2
+          with:
+            path: ~/.composer/cache/files
+            key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
+            restore-keys: ${{ runner.os }}-composer-
+
+        - name: Install PHP
+          uses: shivammathur/setup-php@v2
+          with:
+            php-version: "${{ env.php_version }}"
+            extensions: "${{ env.php_extensions }}"
+            tools: composer:v2.4
+
+        - name: Install dependencies
+          run: composer install --no-scripts --no-progress --no-suggest --prefer-dist --optimize-autoloader
+
+        - name: Code style check
+          run: |
+            sh ./vendor/bin/proxify-cs-checker
+```
 ### Testing
 
 ```bash

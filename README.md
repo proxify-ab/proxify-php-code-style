@@ -28,7 +28,15 @@ php vendor/bin/proxify-cs-fixer app/Models
 php vendor/bin/proxify-cs-fixer app/Models/User.php app/Models/Developer.php
 ```
 
+### VSCode setup
+Install Laravel pint plugin:
+https://marketplace.visualstudio.com/items?itemName=open-southeners.laravel-pint
+
+Add code style config path to `.vscode/settings.json`
 ```
+"laravel-pint.configPath": "vendor/proxify/proxify-php-code-style/pint.json"
+```
+
 <img width="991" alt="image" src="https://github.com/proxify-ab/proxify-php-code-style/assets/9916806/e3384d45-e289-4912-9092-1f11103f24ff">
 
 <img width="987" alt="image" src="https://github.com/proxify-ab/proxify-php-code-style/assets/9916806/b02b59be-9aaf-4c43-bf0b-d5f0d3fac9ca">

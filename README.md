@@ -37,8 +37,20 @@ Add code style config path to `.vscode/settings.json`
 "laravel-pint.configPath": "vendor/proxify/proxify-php-code-style/pint.json"
 ```
 
+### PHPStorm setup
+
+Create a new File watcher.
 <img width="991" alt="image" src="https://github.com/proxify-ab/proxify-php-code-style/assets/9916806/e3384d45-e289-4912-9092-1f11103f24ff">
 
+```
+// Pint file watcher settings
+$ProjectFileDir$/vendor/bin/proxify-cs-fixer
+$FileRelativePath$
+$FileRelativePath$
+$ProjectFileDir$
+```
+
+Disable `PHP` in the reformat code setting.
 <img width="987" alt="image" src="https://github.com/proxify-ab/proxify-php-code-style/assets/9916806/b02b59be-9aaf-4c43-bf0b-d5f0d3fac9ca">
 
 ### Testing

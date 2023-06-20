@@ -19,6 +19,7 @@ composer require proxify/proxify-php-code-style
 ```php
 // Usage description here
 ```
+<img width="991" alt="image" src="https://github.com/proxify-ab/proxify-php-code-style/assets/9916806/e3384d45-e289-4912-9092-1f11103f24ff">
 
 ### Testing
 

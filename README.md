@@ -2,9 +2,8 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/proxify/proxify-php-code-style.svg?style=flat-square)](https://packagist.org/packages/proxify/proxify-php-code-style)
 [![Total Downloads](https://img.shields.io/packagist/dt/proxify/proxify-php-code-style.svg?style=flat-square)](https://packagist.org/packages/proxify/proxify-php-code-style)
-![GitHub Actions](https://github.com/proxify/proxify-php-code-style/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package is a [Laravel Pint](https://laravel.com/docs/pint) preset for [Proxify](https://proxify.io) projects.
 
 ## Installation
 
@@ -14,19 +13,12 @@ You can install the package via composer:
 composer require proxify/proxify-php-code-style --dev
 ```
 
-## Usage
-
-### Command line
-```php
-// checks new and modified files if they follow coding standar
-sh vendor/bin/proxify-cs-checker
-// fixes all project php files
-php vendor/bin/proxify-cs-fixer
-// fixes selected path files
-php vendor/bin/proxify-cs-fixer app/Models
-// fixes selected files
-php vendor/bin/proxify-cs-fixer app/Models/User.php app/Models/Developer.php
+```bash
+pint --config vendor/proxify/proxify-php-code-style/pint.json
 ```
+
+## Usage
+Check for [laravel pint docs](https://laravel.com/docs/pint)
 
 ### VSCode setup
 Install Laravel pint plugin:
@@ -40,52 +32,63 @@ Add code style config path to `.vscode/settings.json`
 ### PHPStorm setup
 
 Create a new File watcher.
-<img width="985" alt="image" src="https://github.com/proxify-ab/proxify-php-code-style/assets/9916806/d28cb170-6305-4ecb-9eda-9ccd49f71fb5">
-
 
 ```
 // Pint file watcher settings
-$ProjectFileDir$/vendor/bin/proxify-cs-fixer
+$ProjectFileDir$/vendor/bin/pint
 $FileRelativePath$
 $FileRelativePath$
 $ProjectFileDir$
 ```
+![file-watchers.jpg](..%2F..%2FDownloads%2Ffile-watchers.jpg)
+
+To make phpstorm ctrl+alt+L hotkey work similar to pint configs, adjust code style by setting laravel and update
+
+“Wrapping and Braces“->”Array initializer”->“align key-value pairs”
+
+“Spaces“->”Around operators”->”Concatenation(.)”
+
+![Editor Configs](..%2F..%2FDownloads%2Feditor-configs.jpg)
 
 Disable `PHP` in the reformat code setting.
-<img width="987" alt="image" src="https://github.com/proxify-ab/proxify-php-code-style/assets/9916806/b02b59be-9aaf-4c43-bf0b-d5f0d3fac9ca">
+![reformat-code.jpg](..%2F..%2FDownloads%2Freformat-code.jpg)
+
+[Source Article](https://janostlund.com/2023-05-11/php-storm-laravel-pint#:~:text=If%20you%20want%20Laravel%20Pint,in%20code%20formatting%20for%20PHP)
+
+[Laracasts Video](https://laracasts.com/series/phpstorm-for-laravel-developers/episodes/5)
 
 ### Github actions job
+create a file in `.github/workflows/pint.yml`
 ```yml
-  laravel-code-style:
-      name: Code Style
-      if: github.ref_name != 'master'
-      runs-on: "ubuntu-20.04"
-      steps:
-        - uses: actions/checkout@v3
-          with:
-            fetch-depth: 0
-
-        - name: Cache Composer cache directory
-          uses: actions/cache@v2
-          with:
-            path: ~/.composer/cache/files
-            key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
-            restore-keys: ${{ runner.os }}-composer-
-
-        - name: Install PHP
-          uses: shivammathur/setup-php@v2
-          with:
-            php-version: "${{ env.php_version }}"
-            extensions: "${{ env.php_extensions }}"
-            tools: composer:v2.4
-
-        - name: Install dependencies
-          run: composer install --no-scripts --no-progress --no-suggest --prefer-dist --optimize-autoloader
-
-        - name: Code style check
-          run: |
-            sh ./vendor/bin/proxify-cs-checker
+name: PHP Linting
+on: pull_request
+jobs:
+  phplint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: "laravel-pint"
+        uses: aglipanci/laravel-pint-action@2.0.0
+        with:
+          preset: laravel
+          verboseMode: true
+          testMode: true
 ```
+
+### Pre-commit testing
+Add this to your `.pre-commit-config.yaml`
+```yaml
+repos:
+  - repo: local
+    hooks:
+      - id: laravel-pint
+        name: laravel-pint
+        entry: ./vendor/bin/pint
+        language: script
+        types: [php]
+        pass_filenames: false
+```
+
 ### Testing
 
 ```bash

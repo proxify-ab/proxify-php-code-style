@@ -104,11 +104,6 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 If you discover any security related issues, please email chadidi97@gmail.com instead of using the issue tracker.
 
-## Credits
-
--   [Abdellah Chadidi](https://github.com/chadidi)
--   [All Contributors](../../contributors)
-
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

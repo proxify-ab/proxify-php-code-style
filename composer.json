@@ -8,13 +8,6 @@
     "homepage": "https://github.com/proxify/proxify-php-code-style",
     "license": "MIT",
     "type": "library",
-    "authors": [
-        {
-            "name": "Abdellah Chadidi",
-            "email": "chadidi97@gmail.com",
-            "role": "Developer"
-        }
-    ],
     "require": {
         "php": "^8.0",
         "laravel/pint": "^1.10"

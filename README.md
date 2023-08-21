@@ -40,7 +40,7 @@ $FileRelativePath$
 $FileRelativePath$
 $ProjectFileDir$
 ```
-![file-watchers.jpg](..%2F..%2FDownloads%2Ffile-watchers.jpg)
+![Watchers config](..%2F..%2FDownloads%2Ffile-watchers.jpg)
 
 To make phpstorm ctrl+alt+L hotkey work similar to pint configs, adjust code style by setting laravel and update
 

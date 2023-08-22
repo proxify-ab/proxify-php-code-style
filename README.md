@@ -13,10 +13,6 @@ You can install the package via composer:
 composer require proxify/proxify-php-code-style --dev
 ```
 
-```bash
-pint --config vendor/proxify/proxify-php-code-style/pint.json
-```
-
 ## Usage
 
 ### Command line
@@ -32,6 +28,8 @@ php vendor/bin/proxify-cs-fixer app/Models/User.php app/Models/Developer.php
 ```
 These commands will use proxify code style rules by default, which are made on top of laravel preset.
 For more details you can check [laravel pint docs](https://laravel.com/docs/pint)
+Although it's not recommended, you still can use laravel pint commands directly
+as well as custom pint.json config file.
 
 ### VSCode setup
 Install Laravel pint plugin:
@@ -53,7 +51,7 @@ $FileRelativePath$
 $FileRelativePath$
 $ProjectFileDir$
 ```
-![Watchers config](https://raw.githubusercontent.com/proxify-ab/proxify-php-code-style/master/assets/file-watchers.jpg?token=GHSAT0AAAAAABY6GVP6XAPFDZFGX665GYQAZHDS2GA)
+![Watchers config](https://github.com/proxify-ab/proxify-php-code-style/blob/master/assets/editor-configs.jpg?raw=true)
 
 To make phpstorm ctrl+alt+L hotkey work similar to pint configs, adjust code style by setting laravel and update
 
@@ -61,10 +59,10 @@ To make phpstorm ctrl+alt+L hotkey work similar to pint configs, adjust code sty
 
 “Spaces“->”Around operators”->”Concatenation(.)”
 
-![Editor Configs](https://raw.githubusercontent.com/proxify-ab/proxify-php-code-style/master/assets/editor-configs.jpg?token=GHSAT0AAAAAABY6GVP6OJZBQE5EY3NE43NOZHDSY5Q)
+![Editor Configs]((https://github.com/proxify-ab/proxify-php-code-style/blob/master/assets/editor-configs.jpg?raw=true)
 
 Disable `PHP` in the reformat code setting.
-![reformat-code.jpg](https://raw.githubusercontent.com/proxify-ab/proxify-php-code-style/master/assets/reformat-code.jpg?token=GHSAT0AAAAAABY6GVP6MWHM2QWIBQXL2BA6ZHDS2WA)
+![reformat-code.jpg](https://github.com/proxify-ab/proxify-php-code-style/blob/master/assets/reformat-code.jpg?raw=true)
 
 [Source Article](https://janostlund.com/2023-05-11/php-storm-laravel-pint#:~:text=If%20you%20want%20Laravel%20Pint,in%20code%20formatting%20for%20PHP)
 

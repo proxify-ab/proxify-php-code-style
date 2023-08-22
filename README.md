@@ -69,7 +69,8 @@ Disable `PHP` in the reformat code setting.
 [Laracasts Video](https://laracasts.com/series/phpstorm-for-laravel-developers/episodes/5)
 
 ### Github actions job
-create a file in `.github/workflows/pint.yml`
+create a file in `.github/workflows/laravel_checks.yml`
+or add the below step to your existing jobs workflow
 ```yml
   laravel-code-style:
     name: Code Style

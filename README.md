@@ -18,7 +18,20 @@ pint --config vendor/proxify/proxify-php-code-style/pint.json
 ```
 
 ## Usage
-Check for [laravel pint docs](https://laravel.com/docs/pint)
+
+### Command line
+```php
+// checks new and modified files if they follow coding standar
+sh vendor/bin/proxify-cs-checker
+// fixes all project php files
+php vendor/bin/proxify-cs-fixer
+// fixes selected path files
+php vendor/bin/proxify-cs-fixer app/Models
+// fixes selected files
+php vendor/bin/proxify-cs-fixer app/Models/User.php app/Models/Developer.php
+```
+These commands will use proxify code style rules by default, which are made on top of laravel preset.
+For more details you can check [laravel pint docs](https://laravel.com/docs/pint)
 
 ### VSCode setup
 Install Laravel pint plugin:
@@ -35,7 +48,7 @@ Create a new File watcher.
 
 ```
 // Pint file watcher settings
-$ProjectFileDir$/vendor/bin/pint
+$ProjectFileDir$/vendor//bin/proxify-cs-fixer
 $FileRelativePath$
 $FileRelativePath$
 $ProjectFileDir$
@@ -60,19 +73,35 @@ Disable `PHP` in the reformat code setting.
 ### Github actions job
 create a file in `.github/workflows/pint.yml`
 ```yml
-name: PHP Linting
-on: pull_request
-jobs:
-  phplint:
-    runs-on: ubuntu-latest
+  laravel-code-style:
+    name: Code Style
+    if: github.ref_name != 'master'
+    runs-on: "ubuntu-20.04"
     steps:
-      - uses: actions/checkout@v1
-      - name: "laravel-pint"
-        uses: aglipanci/laravel-pint-action@2.0.0
+      - uses: actions/checkout@v3
         with:
-          preset: laravel
-          verboseMode: true
-          testMode: true
+          fetch-depth: 0
+
+      - name: Cache Composer cache directory
+        uses: actions/cache@v2
+        with:
+          path: ~/.composer/cache/files
+          key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "${{ env.php_version }}"
+          extensions: "${{ env.php_extensions }}"
+          tools: composer:v2.4
+
+      - name: Install dependencies
+        run: composer install --no-scripts --no-progress --no-suggest --prefer-dist --optimize-autoloader
+
+      - name: Code style check
+        run: |
+          sh ./vendor/bin/proxify-cs-checker
 ```
 
 ### Pre-commit testing
@@ -83,7 +112,7 @@ repos:
     hooks:
       - id: laravel-pint
         name: laravel-pint
-        entry: ./vendor/bin/pint
+        entry: ./vendor/bin/proxify-cs-fixer
         language: script
         types: [php]
         pass_filenames: false

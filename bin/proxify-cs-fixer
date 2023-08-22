@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+$packagePath = 'vendor/bin/pint';
+$configFile = './pint.json';
+
+if (file_exists($configFile)) {
+    echo 'Using project custom code style config file.' . PHP_EOL;
+    $configFileArg = "--config=$configFile";
+} else {
+    $defaultConfigFile = './vendor/proxify/proxify-php-code-style/pint.json';
+    if (file_exists($defaultConfigFile)) {
+        echo 'Using proxify default code style config file.' . PHP_EOL;
+        $configFileArg = "--config=$defaultConfigFile";
+    }
+}
+
+echo PHP_EOL;
+// remove first argument (proxify-cs-fixer)
+array_shift($argv);
+
+$command = "php $packagePath $configFileArg " . implode(' ', $argv);
+
+passthru($command);

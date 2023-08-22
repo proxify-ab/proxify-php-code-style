@@ -40,7 +40,7 @@ $FileRelativePath$
 $FileRelativePath$
 $ProjectFileDir$
 ```
-![Watchers config](..%2F..%2FDownloads%2Ffile-watchers.jpg)
+![Watchers config](https://raw.githubusercontent.com/proxify-ab/proxify-php-code-style/master/assets/file-watchers.jpg?token=GHSAT0AAAAAABY6GVP6XAPFDZFGX665GYQAZHDS2GA)
 
 To make phpstorm ctrl+alt+L hotkey work similar to pint configs, adjust code style by setting laravel and update
 
@@ -48,10 +48,10 @@ To make phpstorm ctrl+alt+L hotkey work similar to pint configs, adjust code sty
 
 “Spaces“->”Around operators”->”Concatenation(.)”
 
-![Editor Configs](..%2F..%2FDownloads%2Feditor-configs.jpg)
+![Editor Configs](https://raw.githubusercontent.com/proxify-ab/proxify-php-code-style/master/assets/editor-configs.jpg?token=GHSAT0AAAAAABY6GVP6OJZBQE5EY3NE43NOZHDSY5Q)
 
 Disable `PHP` in the reformat code setting.
-![reformat-code.jpg](..%2F..%2FDownloads%2Freformat-code.jpg)
+![reformat-code.jpg](https://raw.githubusercontent.com/proxify-ab/proxify-php-code-style/master/assets/reformat-code.jpg?token=GHSAT0AAAAAABY6GVP6MWHM2QWIBQXL2BA6ZHDS2WA)
 
 [Source Article](https://janostlund.com/2023-05-11/php-storm-laravel-pint#:~:text=If%20you%20want%20Laravel%20Pint,in%20code%20formatting%20for%20PHP)
 

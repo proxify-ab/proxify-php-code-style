@@ -59,7 +59,7 @@ To make phpstorm ctrl+alt+L hotkey work similar to pint configs, adjust code sty
 
 “Spaces“->”Around operators”->”Concatenation(.)”
 
-![Editor Configs]((https://github.com/proxify-ab/proxify-php-code-style/blob/master/assets/editor-configs.jpg?raw=true)
+![Editor Configs](https://github.com/proxify-ab/proxify-php-code-style/blob/master/assets/editor-configs.jpg?raw=true)
 
 Disable `PHP` in the reformat code setting.
 ![reformat-code.jpg](https://github.com/proxify-ab/proxify-php-code-style/blob/master/assets/reformat-code.jpg?raw=true)

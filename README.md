@@ -51,7 +51,7 @@ $FileRelativePath$
 $FileRelativePath$
 $ProjectFileDir$
 ```
-![Watchers config](https://github.com/proxify-ab/proxify-php-code-style/blob/master/assets/file-watchers.jpg?raw=true)
+![Watchers config](https://github.com/proxify-ab/proxify-php-code-style/blob/master/assets/file-watchers.png?raw=true)
 
 To make phpstorm ctrl+alt+L hotkey work similar to pint configs, adjust code style by setting laravel and update
 

@@ -50,6 +50,7 @@ $ProjectFileDir$/vendor//bin/proxify-cs-fixer
 $FileRelativePath$
 $FileRelativePath$
 $ProjectFileDir$
+PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 ```
 ![Watchers config](https://github.com/proxify-ab/proxify-php-code-style/blob/master/assets/file-watchers.png?raw=true)
 
@@ -105,6 +106,11 @@ or add the below step to your existing jobs workflow
 
 ### Pre-commit testing
 install [pre-commit](https://pre-commit.com/#install) on your PC
+then run the command below on your project root to enable pre-commit hook
+
+```bash
+ pre-commit install
+```
 
 Add this to your `.pre-commit-config.yaml`
 ```yaml

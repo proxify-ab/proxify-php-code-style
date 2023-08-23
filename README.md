@@ -104,6 +104,8 @@ or add the below step to your existing jobs workflow
 ```
 
 ### Pre-commit testing
+install [pre-commit](https://pre-commit.com/#install) on your PC
+
 Add this to your `.pre-commit-config.yaml`
 ```yaml
 repos:

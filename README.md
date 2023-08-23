@@ -119,7 +119,7 @@ repos:
     hooks:
       - id: laravel-pint
         name: laravel-pint
-        entry: ./vendor/bin/proxify-cs-fixer
+        entry: ./vendor/bin/proxify-cs-pre-commit
         language: script
         types: [php]
         pass_filenames: false

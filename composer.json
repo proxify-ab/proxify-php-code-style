@@ -27,6 +27,7 @@
     },
     "bin": [
         "bin/proxify-cs-checker",
+        "bin/proxify-cs-pre-commit",
         "bin/proxify-cs-fixer"
     ],
     "scripts": {

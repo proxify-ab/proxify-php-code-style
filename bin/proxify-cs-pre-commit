@@ -21,8 +21,14 @@ fi
 
 echo ""
 
-if [ -z "$ADDED" ] && [ -z "$CHANGED" ]
-then echo 'No PHP files on this Pull Request, skip.';
+if [ -z "$ADDED" ] && [ -z "$CHANGED" ]; then
+  echo 'No PHP files in this Pull Request, skip.';
 else
-  php ${PACKAGE_PATH} $CONFIG_FILE_ARG $ADDED $CHANGED
+  php ${PACKAGE_PATH} --test --dirty $CONFIG_FILE_ARG
+fi
+
+if [ $? -eq 0 ]; then
+    echo OK
+else
+  php ${PACKAGE_PATH} --dirty $CONFIG_FILE_ARG
 fi

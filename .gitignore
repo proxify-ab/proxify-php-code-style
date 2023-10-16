@@ -2,3 +2,4 @@
 .DS_Store
 **ide-helper*
 *ide_helper*
+/vendor

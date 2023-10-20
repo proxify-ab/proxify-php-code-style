@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-ADDED=$(git diff --diff-filter=A --name-only origin/master -- '*.php')
-CHANGED=$(git diff --diff-filter=Mda --name-only origin/master -- '*.php')
+ADDED=$(git diff --diff-filter=A --name-only origin/staging -- '*.php')
+CHANGED=$(git diff --diff-filter=Mda --name-only origin/staging -- '*.php')
 
 PACKAGE_PATH="./vendor/bin/pint"
 
@@ -24,5 +24,5 @@ echo ""
 if [ -z "$ADDED" ] && [ -z "$CHANGED" ]; then
   echo 'No PHP files in this Pull Request, skip.';
 else
-  php ${PACKAGE_PATH} --test --dirty $CONFIG_FILE_ARG
+  php ${PACKAGE_PATH} --test $CONFIG_FILE_ARG $ADDED $CHANGED
 fi

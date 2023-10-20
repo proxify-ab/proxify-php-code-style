@@ -31,6 +31,13 @@ For more details you can check [laravel pint docs](https://laravel.com/docs/pint
 Although it's not recommended, you still can use laravel pint commands directly
 as well as custom pint.json config file.
 
+### Windows users
+To prevent Git from automatically changing line endings, please modify your Git configuration.
+```
+git config --global core.autocrlf input
+```
+This will change CRLF line separator to LF. ( Linux based )
+
 ### VSCode setup
 Install Laravel pint plugin:
 https://marketplace.visualstudio.com/items?itemName=open-southeners.laravel-pint

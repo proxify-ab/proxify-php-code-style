@@ -46,6 +46,9 @@
         "function_declaration": {
             "closure_fn_spacing": "none",
             "closure_function_spacing": "none"
+        },
+        "nullable_type_declaration_for_default_null_value": {
+            "use_nullable_type_declaration": true
         }
     }
 }

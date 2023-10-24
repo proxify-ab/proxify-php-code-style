@@ -3,6 +3,10 @@
     "rules": {
         "array_indentation": true,
         "assign_null_coalescing_to_coalesce_equal": true,
+        "class_attributes_separation": {
+            "const": "only_if_meta",
+            "property": "only_if_meta"
+        },
         "no_superfluous_phpdoc_tags": false,
         "no_unused_imports": true,
         "single_import_per_statement": {

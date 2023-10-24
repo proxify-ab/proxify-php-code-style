@@ -42,6 +42,10 @@
             "operators": {
                 "=>": "align"
             }
+        },
+        "function_declaration": {
+            "closure_fn_spacing": "none",
+            "closure_function_spacing": "none"
         }
     }
 }

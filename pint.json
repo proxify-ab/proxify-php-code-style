@@ -6,7 +6,10 @@
         "class_attributes_separation": {
             "elements": {
                 "const": "only_if_meta",
-                "property": "only_if_meta"
+                "property": "only_if_meta",
+                "case": "none",
+                "trait_import": "one",
+                "method": "one"
             }
         },
         "no_superfluous_phpdoc_tags": false,

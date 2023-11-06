@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-ADDED=$(git diff --diff-filter=A --name-only origin/staging -- '*.php')
-CHANGED=$(git diff --diff-filter=Mda --name-only origin/staging -- '*.php')
+ADDED=$(git diff --diff-filter=A --name-only origin/$1 -- '*.php')
+CHANGED=$(git diff --diff-filter=Mda --name-only origin/$1 -- '*.php')
 
 PACKAGE_PATH="./vendor/bin/pint"
 

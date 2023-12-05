@@ -53,7 +53,7 @@ Create a new File watcher.
 
 ```
 // Pint file watcher settings
-$ProjectFileDir$/vendor//bin/proxify-cs-fixer
+$ProjectFileDir$/vendor/bin/proxify-cs-fixer
 $FileRelativePath$
 $FileRelativePath$
 $ProjectFileDir$

@@ -53,7 +53,7 @@ Create a new File watcher.
 
 ```
 // Pint file watcher settings
-$ProjectFileDir$/vendor//bin/proxify-cs-fixer
+$ProjectFileDir$/vendor/bin/proxify-cs-fixer
 $FileRelativePath$
 $FileRelativePath$
 $ProjectFileDir$
@@ -110,6 +110,15 @@ or add the below step to your existing jobs workflow
         run: |
           sh ./vendor/bin/proxify-cs-checker
 ```
+
+### Errors
+If you get an error like this:
+```
+env: php: No such file or directory
+
+Process finished with exit code 127
+```
+Remove value of `Environment variables`, in the Pint File Watcher settings.
 
 ### Pre-commit testing
 install [pre-commit](https://pre-commit.com/#install) on your PC

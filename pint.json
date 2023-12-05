@@ -40,7 +40,7 @@
         },
         "binary_operator_spaces": {
             "operators": {
-                "=>": "align"
+                "=>": "align_single_space_minimal"
             }
         },
         "function_declaration": {
